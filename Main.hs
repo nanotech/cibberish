@@ -1,7 +1,8 @@
 import Control.Monad (liftM, liftM2, liftM3, liftM4)
-import Data.List
+import Data.List (intersperse)
 import Char (isAlpha)
-import Test.QuickCheck
+import Test.QuickCheck (Gen, Arbitrary, arbitrary, elements, frequency,
+                        oneof, suchThat, resize, listOf1, sample')
 
 data CSizeModifier = Short  | Long      | DefaultSize deriving (Eq)
 data CSignModifier = Signed | Unsigned  | DefaultSign deriving (Eq)
