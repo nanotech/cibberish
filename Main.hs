@@ -172,7 +172,7 @@ pointer = CPointer noQualifiers
 funcPointer = function . pointer
 
 main = do
-  samples <- sample' $ resize 20 (arbitrary :: Gen Declaration)
+  samples <- sample' (arbitrary :: Gen Declaration)
   putStrLn "int main(int argc, char const* argv[])\n{"
   putStrLn $ join "\n" $ map (\x -> "\t{ " ++ show x ++ "; }") samples
   putStrLn "\treturn 0;\n}"
